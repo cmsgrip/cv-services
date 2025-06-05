@@ -8,6 +8,7 @@
 *.bak
 
 # Ignore node or other runtime folders (if used later)
+BackUP/
 node_modules/
 dist/
 build/
