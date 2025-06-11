@@ -1,54 +1,92 @@
-/* Reset and base */
+/* Reset & Global Styles */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f9;
+  background: #f4f6f8;
   color: #333;
+  line-height: 1.6;
+  direction: ltr;
+  padding: 0 1rem;
+}
+
+/* Layout */
+header, section, footer {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 1rem;
 }
 
 /* Header */
 header {
-  background-color: #004080;
+  text-align: center;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
-  padding: 2rem;
-  text-align: center;
+  border-radius: 1rem;
+  padding: 3rem 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+#header-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-header p {
-  margin: 0.5rem 0 0;
+#header-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 
-/* Intro Section */
+.lang-toggle {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #203a43;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background: #eeeeee;
+}
+
+/* Intro */
 .intro {
-  padding: 2rem;
   text-align: center;
 }
 
-/* Services grid */
+.intro h2 {
+  color: #203a43;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Services */
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .card {
-  background: #fff;
+  background: white;
+  border-radius: 1rem;
   padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
@@ -56,103 +94,154 @@ header p {
 }
 
 .card h3 {
-  margin-top: 0;
-  color: #004080;
+  color: #2c5364;
+  margin-bottom: 0.5rem;
 }
 
-/* Pricing Section */
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Pricing */
 .pricing {
-  background: #e6f0ff;
+  background: #fff;
+  border-radius: 1rem;
   padding: 2rem;
+  margin-top: 3rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
-.pricing table {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
+.pricing h2 {
+  color: #203a43;
+  margin-bottom: 1rem;
+}
+
+.offer {
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+table {
+  width: 100%;
   border-collapse: collapse;
+  margin-top: 1rem;
 }
 
-.pricing th,
-.pricing td {
-  border: 1px solid #ccc;
-  padding: 0.75rem;
+th, td {
+  padding: 0.75rem 1rem;
   text-align: center;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.pricing th {
-  background-color: #cce0ff;
+th {
+  background: #2c5364;
+  color: white;
+  font-weight: 600;
 }
 
-.pricing em {
+td {
+  color: #333;
+}
+
+em {
   display: block;
   margin-top: 1rem;
-  font-size: 0.9rem;
+  color: #666;
 }
 
-/* Contact form and Live chat */
-.contact-form,
-.live-chat {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: white;
+/* Contact Form */
+.contact-form {
+  margin-top: 4rem;
+  background: #fefefe;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
 }
 
-.contact-form form {
-  display: grid;
+.contact-form h2 {
+  text-align: center;
+  color: #203a43;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  max-width: 600px;
+  margin: auto;
 }
 
-input,
-textarea,
-button {
+input, textarea {
   padding: 0.75rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
-  width: 100%;
 }
 
-button {
-  background-color: #004080;
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #203a43;
+}
+
+button[type="submit"] {
+  background: #2c5364;
   color: white;
-  cursor: pointer;
   border: none;
-  transition: background-color 0.3s ease;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #003366;
+button[type="submit"]:hover {
+  background: #1b2e3c;
+}
+
+#contact-or {
+  text-align: center;
+  margin-top: 1rem;
+  color: #555;
+}
+
+#contact-or a {
+  color: #2c5364;
+  font-weight: bold;
 }
 
 /* Footer */
 footer {
-  background-color: #00264d;
-  color: white;
-  padding: 1rem;
   text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  padding: 2rem 0;
+  margin-top: 3rem;
 }
 
 footer a {
-  color: #99ccff;
+  color: #2c5364;
   text-decoration: none;
+  font-weight: bold;
 }
 
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
   }
 
-  .card h3 {
-    font-size: 1.2rem;
+  #header-title {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  form {
+    width: 100%;
   }
 }
