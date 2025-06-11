@@ -1,211 +1,144 @@
-/* Reset some basics */
+/* Reset and base */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background: #fefefe;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
   color: #333;
-  line-height: 1.6;
-  padding: 10px 20px;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
+/* Header */
 header {
+  background-color: #004080;
+  color: white;
+  padding: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.2rem;
-  color: #004aad;
+  margin: 0;
+  font-size: 2.5rem;
 }
 
 header p {
-  font-size: 1.2rem;
-  color: #666;
+  margin: 0.5rem 0 0;
 }
 
-.lang-toggle {
-  margin-top: 15px;
-  padding: 8px 16px;
-  border: none;
-  background: #004aad;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-}
-
-.lang-toggle:hover {
-  background: #003080;
-}
-
+/* Intro Section */
 .intro {
-  margin-bottom: 2rem;
-}
-
-.intro h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: #004aad;
-}
-
-.intro p {
-  font-size: 1.1rem;
-  color: #444;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.services .card {
-  background: #e8f0fe;
-  border: 1px solid #b3d1ff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 74, 173, 0.1);
-}
-
-.services .card h3 {
-  color: #004aad;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
-
-.services .card p {
-  color: #333;
-  font-size: 1rem;
-}
-
-.pricing {
-  margin-bottom: 2rem;
+  padding: 2rem;
   text-align: center;
 }
 
-.pricing h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: #004aad;
+/* Services grid */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-.pricing .offer {
-  color: #d32f2f;
-  font-weight: bold;
-  margin-left: 8px;
-  font-size: 1.1rem;
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #004080;
+}
+
+/* Pricing Section */
+.pricing {
+  background: #e6f0ff;
+  padding: 2rem;
+  text-align: center;
 }
 
 .pricing table {
-  width: 100%;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
   border-collapse: collapse;
-  margin: 1rem 0;
 }
 
 .pricing th,
 .pricing td {
-  border: 1px solid #004aad;
-  padding: 0.8rem;
-  font-size: 1rem;
-  color: #004aad;
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: center;
 }
 
 .pricing th {
-  background: #c9daf8;
+  background-color: #cce0ff;
 }
 
-.pricing tbody tr:nth-child(even) {
-  background: #f2f7ff;
-}
-
-.pricing p em {
+.pricing em {
+  display: block;
+  margin-top: 1rem;
   font-size: 0.9rem;
-  color: #555;
 }
 
-.contact-form {
-  background: #e8f0fe;
-  border: 1px solid #b3d1ff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  max-width: 600px;
-  margin: 0 auto 3rem auto;
-}
-
-.contact-form h2 {
-  text-align: center;
-  color: #004aad;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
+/* Contact form and Live chat */
+.contact-form,
+.live-chat {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .contact-form form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  padding: 10px;
+input,
+textarea,
+button {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   font-size: 1rem;
-  border: 1px solid #004aad;
-  border-radius: 4px;
-  resize: vertical;
+  width: 100%;
 }
 
-.contact-form button {
-  background: #004aad;
+button {
+  background-color: #004080;
   color: white;
-  border: none;
-  padding: 12px;
-  font-size: 1.1rem;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
-.contact-form button:hover {
-  background: #003080;
+button:hover {
+  background-color: #003366;
 }
 
-.contact-form p {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-
-.contact-form a {
-  color: #004aad;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.contact-form a:hover {
-  text-decoration: underline;
-}
-
+/* Footer */
 footer {
+  background-color: #00264d;
+  color: white;
+  padding: 1rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: #555;
-  padding: 1rem 0;
-  border-top: 1px solid #ccc;
 }
 
 footer a {
-  color: #004aad;
+  color: #99ccff;
   text-decoration: none;
 }
 
@@ -213,17 +146,13 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* RTL adjustments when Arabic selected */
-[dir="rtl"] {
-  direction: rtl;
-  text-align: right;
-}
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
 
-[dir="rtl"] .contact-form form {
-  text-align: right;
-}
-
-[dir="rtl"] .lang-toggle {
-  /* Optionally align toggle button to left for Arabic */
-  float: left;
+  .card h3 {
+    font-size: 1.2rem;
+  }
 }
