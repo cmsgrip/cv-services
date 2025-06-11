@@ -2,64 +2,238 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CV Services - Klerking</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional CV writing, document design, and corporate branding services for expatriates and companies." />
+  <title>KlerKing CV & Document Design Services</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="lang-toggle">
-      <button onclick="toggleLang()">اردو / English</button>
-    </div>
-    <h1 id="main-heading">Professional CV Writing Services</h1>
-    <p id="main-subheading">Boost your career with expert-crafted resumes and profiles</p>
-    <div class="promo-banner">🔥 75% OFF – Limited Time (2 Weeks Only)!</div>
+  <header>
+    <h1 id="header-title">KlerKing CV & Document Design Services</h1>
+    <p id="header-subtitle">Empowering your career & brand with professional documentation</p>
+    <button class="lang-toggle" onclick="toggleLanguage()">العربية / English</button>
   </header>
 
+  <section class="intro">
+    <h2 id="why-choose-us">Why Choose Us?</h2>
+    <p id="intro-text">
+      We specialize in delivering high-impact, professionally designed CVs, resumes, portfolios, business documents, and certificates tailored for both local and expatriate clients. Fast turnaround. Satisfaction guaranteed.
+    </p>
+  </section>
+
   <section class="services">
-    <h2 id="services-title">Our Services</h2>
-    <ul id="services-list">
-      <li>CV / Resume Writing</li>
-      <li>Cover Letter Writing</li>
-      <li>LinkedIn Profile Optimization</li>
-    </ul>
+    <div class="card">
+      <h3 id="service-cv">CV & Resume Writing</h3>
+      <p id="desc-cv">Professional, tailored CVs for expatriates and locals seeking jobs in Saudi Arabia, UAE, Europe & beyond.</p>
+    </div>
+    <div class="card">
+      <h3 id="service-cover">Cover Letters</h3>
+      <p id="desc-cover">Personalized and impactful cover letters that grab employer attention.</p>
+    </div>
+    <div class="card">
+      <h3 id="service-linkedin">LinkedIn Profiles</h3>
+      <p id="desc-linkedin">Optimization and branding for your professional LinkedIn presence.</p>
+    </div>
+    <div class="card">
+      <h3 id="service-company">Company Profiles & Brochures</h3>
+      <p id="desc-company">Stand out with stunning company profiles, brochures and presentations.</p>
+    </div>
+    <div class="card">
+      <h3 id="service-certs">Certificates & Document Design</h3>
+      <p id="desc-certs">Design of training certificates, award certificates, templates, forms & official docs.</p>
+    </div>
+    <div class="card">
+      <h3 id="service-translation">Translation & Formatting</h3>
+      <p id="desc-translation">Legal, technical and academic document translation with precise formatting.</p>
+    </div>
   </section>
 
   <section class="pricing">
-    <h2 id="pricing-title">Pricing (After 75% OFF)</h2>
-    <div class="pricing-grid">
-      <div class="card">
-        <h3>Basic CV</h3>
-        <p class="price">$10 <span class="old-price">$40</span></p>
-        <button>Order Now</button>
-      </div>
-      <div class="card">
-        <h3>CV + Cover Letter</h3>
-        <p class="price">$15 <span class="old-price">$60</span></p>
-        <button>Order Now</button>
-      </div>
-      <div class="card">
-        <h3>Premium Package</h3>
-        <p class="price">$25 <span class="old-price">$100</span></p>
-        <button>Order Now</button>
-      </div>
-    </div>
+    <h2 id="pricing-title">
+      Pricing Plans <span class="offer">(75% OFF for 2 weeks!)</span>
+    </h2>
+    <table>
+      <thead>
+        <tr>
+          <th id="th-service">Service</th>
+          <th id="th-basic">Basic</th>
+          <th id="th-premium">Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="td-cv">CV / Resume</td>
+          <td>SAR 25</td>
+          <td>SAR 62.50</td>
+        </tr>
+        <tr>
+          <td id="td-cover">Cover Letter</td>
+          <td>SAR 12.50</td>
+          <td>SAR 37.50</td>
+        </tr>
+        <tr>
+          <td id="td-linkedin">LinkedIn Optimization</td>
+          <td>SAR 37.50</td>
+          <td>SAR 75</td>
+        </tr>
+        <tr>
+          <td id="td-certs">Certificates / Docs</td>
+          <td>SAR 18.75</td>
+          <td>SAR 50</td>
+        </tr>
+        <tr>
+          <td id="td-company">Company Profile Design</td>
+          <td>SAR 62.50</td>
+          <td>SAR 125+</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><em id="bulk-note">Bulk, urgent, and customized service quotes available upon request.</em></p>
+  </section>
+
+  <section class="contact-form">
+    <h2 id="contact-title">Get in Touch</h2>
+    <form action="mailto:design@klerking.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required id="input-name" />
+      <input type="email" name="email" placeholder="Your Email" required id="input-email" />
+      <textarea name="message" placeholder="Tell us what you need..." rows="5" required id="input-message"></textarea>
+      <button type="submit" id="send-button">Send Email</button>
+    </form>
+    <p id="contact-or">
+      Or contact us on
+      <a href="https://wa.me/966571343223" target="_blank" id="whatsapp-link">WhatsApp</a>
+    </p>
   </section>
 
   <footer>
-    <p>&copy; 2025 CV Services by Klerking</p>
+    <p>
+      &copy; 2025 KlerKing CV & Design Services | Email:
+      <a href="mailto:design@klerking.com">design@klerking.com</a> |
+      WhatsApp: <a href="https://wa.me/966571343223" target="_blank">+966-571343223</a>
+    </p>
   </footer>
 
   <script>
-    function toggleLang() {
-      const lang = document.getElementById("main-heading").textContent.includes("Professional") ? "ur" : "en";
-      document.getElementById("main-heading").textContent = lang === "ur" ? "پیشہ ورانہ سی وی خدمات" : "Professional CV Writing Services";
-      document.getElementById("main-subheading").textContent = lang === "ur" ? "ماہرین کی جانب سے تیار کردہ سی وی سے اپنا کیریئر بڑھائیں" : "Boost your career with expert-crafted resumes and profiles";
-      document.getElementById("services-title").textContent = lang === "ur" ? "ہماری خدمات" : "Our Services";
-      document.getElementById("services-list").innerHTML = lang === "ur"
-        ? "<li>سی وی / ریزیومے لکھنا</li><li>کوریج لیٹر لکھنا</li><li>لنکڈ اِن پروفائل بہتر بنانا</li>"
-        : "<li>CV / Resume Writing</li><li>Cover Letter Writing</li><li>LinkedIn Profile Optimization</li>";
-      document.getElementById("pricing-title").textContent = lang === "ur" ? "قیمتیں (75٪ رعایت کے بعد)" : "Pricing (After 75% OFF)";
+    const englishTexts = {
+      headerTitle: "KlerKing CV & Document Design Services",
+      headerSubtitle: "Empowering your career & brand with professional documentation",
+      whyChooseUs: "Why Choose Us?",
+      introText:
+        "We specialize in delivering high-impact, professionally designed CVs, resumes, portfolios, business documents, and certificates tailored for both local and expatriate clients. Fast turnaround. Satisfaction guaranteed.",
+      serviceCv: "CV & Resume Writing",
+      descCv:
+        "Professional, tailored CVs for expatriates and locals seeking jobs in Saudi Arabia, UAE, Europe & beyond.",
+      serviceCover: "Cover Letters",
+      descCover: "Personalized and impactful cover letters that grab employer attention.",
+      serviceLinkedin: "LinkedIn Profiles",
+      descLinkedin: "Optimization and branding for your professional LinkedIn presence.",
+      serviceCompany: "Company Profiles & Brochures",
+      descCompany: "Stand out with stunning company profiles, brochures and presentations.",
+      serviceCerts: "Certificates & Document Design",
+      descCerts:
+        "Design of training certificates, award certificates, templates, forms & official docs.",
+      serviceTranslation: "Translation & Formatting",
+      descTranslation:
+        "Legal, technical and academic document translation with precise formatting.",
+      pricingTitle: "Pricing Plans ",
+      bulkNote: "Bulk, urgent, and customized service quotes available upon request.",
+      thService: "Service",
+      thBasic: "Basic",
+      thPremium: "Premium",
+      tdCv: "CV / Resume",
+      tdCover: "Cover Letter",
+      tdLinkedin: "LinkedIn Optimization",
+      tdCerts: "Certificates / Docs",
+      tdCompany: "Company Profile Design",
+      contactTitle: "Get in Touch",
+      inputName: "Your Name",
+      inputEmail: "Your Email",
+      inputMessage: "Tell us what you need...",
+      sendButton: "Send Email",
+      contactOr: "Or contact us on ",
+      whatsapp: "WhatsApp",
+      offer: "(75% OFF for 2 weeks!)"
+    };
+
+    const arabicTexts = {
+      headerTitle: "كلير كينج خدمات كتابة السيرة الذاتية وتصميم الوثائق",
+      headerSubtitle: "تمكين مسيرتك المهنية وعلامتك التجارية من خلال الوثائق الاحترافية",
+      whyChooseUs: "لماذا تختارنا؟",
+      introText:
+        "نحن متخصصون في تقديم سير ذاتية، ومحافظ أعمال، ومستندات تجارية، وشهادات عالية التأثير ومصممة بشكل احترافي تناسب العملاء المحليين والوافدين. سرعة التنفيذ. رضا مضمون.",
+      serviceCv: "كتابة السيرة الذاتية",
+      descCv: "سير ذاتية مهنية ومخصصة للوافدين والمحليين الباحثين عن وظائف في السعودية، الإمارات، أوروبا وأكثر.",
+      serviceCover: "رسائل التغطية",
+      descCover: "رسائل تغطية مخصصة وفعالة تجذب انتباه أصحاب العمل.",
+      serviceLinkedin: "ملفات لينكدإن",
+      descLinkedin: "تحسين وترويج حضورك المهني على لينكدإن.",
+      serviceCompany: "ملفات الشركة والكتيبات",
+      descCompany: "تميز مع ملفات الشركة والكتيبات والعروض التقديمية الرائعة.",
+      serviceCerts: "الشهادات وتصميم الوثائق",
+      descCerts: "تصميم شهادات التدريب، شهادات الجوائز، القوالب، النماذج، والوثائق الرسمية.",
+      serviceTranslation: "الترجمة والتنسيق",
+      descTranslation: "ترجمة دقيقة للمستندات القانونية والفنية والأكاديمية مع التنسيق الصحيح.",
+      pricingTitle: "خطط الأسعار ",
+      bulkNote: "تتوفر عروض خاصة للخدمات بالجملة والعاجلة والمخصصة عند الطلب.",
+      thService: "الخدمة",
+      thBasic: "الأساسي",
+      thPremium: "المميز",
+      tdCv: "السيرة الذاتية",
+      tdCover: "رسالة تغطية",
+      tdLinkedin: "تحسين لينكدإن",
+      tdCerts: "الشهادات / الوثائق",
+      tdCompany: "تصميم ملف الشركة",
+      contactTitle: "تواصل معنا",
+      inputName: "اسمك",
+      inputEmail: "بريدك الإلكتروني",
+      inputMessage: "أخبرنا بما تحتاجه...",
+      sendButton: "أرسل البريد",
+      contactOr: "أو تواصل معنا عبر ",
+      whatsapp: "واتساب",
+      offer: "(خصم 75% لمدة أسبوعين!)"
+    };
+
+    function toggleLanguage() {
+      const isEnglish = document.documentElement.lang === "en";
+      const texts = isEnglish ? arabicTexts : englishTexts;
+      document.documentElement.lang = isEnglish ? "ar" : "en";
+      document.body.style.direction = isEnglish ? "rtl" : "ltr";
+
+      // Update text content by IDs
+      document.getElementById("header-title").textContent = texts.headerTitle;
+      document.getElementById("header-subtitle").textContent = texts.headerSubtitle;
+      document.getElementById("why-choose-us").textContent = texts.whyChooseUs;
+      document.getElementById("intro-text").textContent = texts.introText;
+      document.getElementById("service-cv").textContent = texts.serviceCv;
+      document.getElementById("desc-cv").textContent = texts.descCv;
+      document.getElementById("service-cover").textContent = texts.serviceCover;
+      document.getElementById("desc-cover").textContent = texts.descCover;
+      document.getElementById("service-linkedin").textContent = texts.serviceLinkedin;
+      document.getElementById("desc-linkedin").textContent = texts.descLinkedin;
+      document.getElementById("service-company").textContent = texts.serviceCompany;
+      document.getElementById("desc-company").textContent = texts.descCompany;
+      document.getElementById("service-certs").textContent = texts.serviceCerts;
+      document.getElementById("desc-certs").textContent = texts.descCerts;
+      document.getElementById("service-translation").textContent = texts.serviceTranslation;
+      document.getElementById("desc-translation").textContent = texts.descTranslation;
+      document.getElementById("pricing-title").firstChild.textContent = texts.pricingTitle;
+      document.querySelector(".offer").textContent = texts.offer;
+      document.getElementById("bulk-note").textContent = texts.bulkNote;
+      document.getElementById("th-service").textContent = texts.thService;
+      document.getElementById("th-basic").textContent = texts.thBasic;
+      document.getElementById("th-premium").textContent = texts.thPremium;
+      document.getElementById("td-cv").textContent = texts.tdCv;
+      document.getElementById("td-cover").textContent = texts.tdCover;
+      document.getElementById("td-linkedin").textContent = texts.tdLinkedin;
+      document.getElementById("td-certs").textContent = texts.tdCerts;
+      document.getElementById("td-company").textContent = texts.tdCompany;
+      document.getElementById("contact-title").textContent = texts.contactTitle;
+      document.getElementById("input-name").placeholder = texts.inputName;
+      document.getElementById("input-email").placeholder = texts.inputEmail;
+      document.getElementById("input-message").placeholder = texts.inputMessage;
+      document.getElementById("send-button").textContent = texts.sendButton;
+      document.getElementById("contact-or").childNodes[0].textContent = texts.contactOr;
+      document.getElementById("whatsapp-link").textContent = texts.whatsapp;
     }
   </script>
 </body>
