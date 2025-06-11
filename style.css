@@ -245,3 +245,72 @@ footer a {
     width: 100%;
   }
 }
+
+/* Mega Pricing 75% off for limitid time */
+.mega-pricing {
+  background: #fff;
+  padding: 3rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+}
+
+.pricing-header {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #2c5364;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-note {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.category {
+  background: #f9fafc;
+  border-radius: 0.75rem;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.category h3 {
+  color: #203a43;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.category ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.category li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px dotted #ddd;
+}
+
+.original {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 0.5rem;
+}
+
+.discounted {
+  font-weight: bold;
+  color: #2c5364;
+}
