@@ -314,3 +314,55 @@ footer a {
   font-weight: bold;
   color: #2c5364;
 }
+
+/* New Two-Column Contact Section */
+.contact-section {
+  margin-top: 4rem;
+  background: #fefefe;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.contact-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.form-column h2 {
+  text-align: center;
+  color: #203a43;
+  margin-bottom: 1.5rem;
+}
+
+#service-selection {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#service-selection legend {
+  font-weight: bold;
+  color: #203a43;
+  padding: 0 0.5rem;
+}
+
+#service-selection label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
+

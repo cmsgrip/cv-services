@@ -169,29 +169,42 @@
     <p><em id="bulk-note">Bulk, urgent, and customized service quotes available upon request.</em></p>
   </section>
 
-  <section class="contact-form">
-    <h2 id="contact-title">Get in Touch</h2>
-    <form id="contactForm" action="https://formspree.io/f/xnnlanqk" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required id="input-name" />
-      <input type="email" name="email" placeholder="Your Email" required id="input-email" />
-      <textarea name="message" placeholder="Tell us what you need..." rows="5" required id="input-message"></textarea>
-      
-      <fieldset id="service-selection">
-        <legend>Select Services</legend>
-        <!-- Services will be dynamically inserted here by JS -->
-      </fieldset>
-      
-      <div id="total-amount" style="text-align: right; font-weight: bold; margin: 10px 0;">
-        Total: SAR 0
+  <section class="contact-section">
+    <div class="contact-container">
+      <!-- Column 1: Order Now Form -->
+      <div class="form-column">
+        <h2 id="order-title">Order Now</h2>
+        <form id="orderForm" action="https://formspree.io/f/xnnlanqk" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <fieldset id="service-selection">
+            <legend>Select Services</legend>
+            <!-- Services will be dynamically inserted here by JS -->
+          </fieldset>
+          <div id="total-amount" style="text-align: right; font-weight: bold; margin: 10px 0;">
+            Total: SAR 0
+          </div>
+          <textarea name="message" placeholder="Additional notes..." rows="3"></textarea>
+          <input type="hidden" name="_subject" value="New Order from KlerKing Website">
+          <button type="submit">Place Order</button>
+        </form>
+        <div id="orderFormMessages"></div>
       </div>
-      
-      <input type="hidden" name="_subject" value="New Message from KlerKing Website">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <button type="submit" id="send-button">Send Email</button>
-    </form>
-    <div id="formMessages"></div> <!-- Message display area -->
-    <p id="contact-or">
+
+      <!-- Column 2: Get in Touch Form -->
+      <div class="form-column">
+        <h2 id="contact-title">Get in Touch</h2>
+        <form id="contactForm" action="https://formspree.io/f/xnnlanqk" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
+          <input type="hidden" name="_subject" value="New Inquiry from KlerKing Website">
+          <button type="submit">Send Message</button>
+        </form>
+        <div id="contactFormMessages"></div>
+      </div>
+    </div>
+    <p id="contact-or" style="text-align: center; margin-top: 20px;">
       Or contact us on
       <a href="https://wa.me/966571343223" target="_blank" id="whatsapp-link">WhatsApp</a>
     </p>
@@ -320,117 +333,138 @@
       document.getElementById("td-certs").textContent = texts.tdCerts;
       document.getElementById("td-company").textContent = texts.tdCompany;
       document.getElementById("contact-title").textContent = texts.contactTitle;
-      document.getElementById("input-name").placeholder = texts.inputName;
-      document.getElementById("input-email").placeholder = texts.inputEmail;
-      document.getElementById("input-message").placeholder = texts.inputMessage;
-      document.getElementById("send-button").textContent = texts.sendButton;
+      // document.getElementById("input-name").placeholder = texts.inputName;
+      // document.getElementById("input-email").placeholder = texts.inputEmail;
+      // document.getElementById("input-message").placeholder = texts.inputMessage;
+      // document.getElementById("send-button").textContent = texts.sendButton;
       document.getElementById("contact-or").childNodes[0].textContent = texts.contactOr;
       document.getElementById("whatsapp-link").textContent = texts.whatsapp;
     }
 
-    // Formspree AJAX submission
-    const contactForm = document.getElementById('contactForm');
-    const formMessages = document.getElementById('formMessages');
-    const serviceSelection = document.getElementById('service-selection');
-    const totalAmountDiv = document.getElementById('total-amount');
+    // --- Order Form Logic ---
+    const orderForm = document.getElementById('orderForm');
+    if (orderForm) {
+      const orderFormMessages = document.getElementById('orderFormMessages');
+      const serviceSelection = document.getElementById('service-selection');
+      const totalAmountDiv = document.getElementById('total-amount');
 
-    const services = [
-        { name: "Entry-Level CV", price: 25 },
-        { name: "Mid-Level CV", price: 50 },
-        { name: "Executive CV", price: 75 },
-        { name: "LinkedIn Optimization", price: 25 },
-        { name: "Infographic CV", price: 75 },
-        { name: "Cover Letter", price: 25 },
-        { name: "Job-Specific CV Customization", price: 20 },
-        { name: "SOP", price: 62 },
-        { name: "Motivation/Intent Letter", price: 38 },
-        { name: "Academic CV", price: 75 },
-        { name: "Recommendation Letter", price: 25 },
-        { name: "Achievement Certificate", price: 25 },
-        { name: "Participation Certificate", price: 25 },
-        { name: "QR Visiting Card", price: 20 },
-        { name: "Portfolio Booklet", price: 88 },
-        { name: "Freelancer Profile", price: 62 },
-        { name "Tender CV", price: 50 },
-        { name: "CV Bundle (5+)", price: 188 },
-        { name: "CV Templates", price: 50 },
-        { name: "Company Profile PDF", price: 250 },
-        { name: "Letterhead + Stamp", price: 50 },
-        { name: "Proposal Template", price: 100 },
-        { name: "10 Certificates", price: 125 },
-        { name: "Onboarding Pack", price: 250 },
-        { name: "Email Signature (HTML)", price: 38 },
-        { name: "Policy Formatting", price: 250 },
-        { name: "Arabic-English Translation", price: 20 },
-        { name: "Editable PDF Forms", price: 25 },
-        { name: "Starter Job Seeker", price: 50 },
-        { name: "Career Boost Pack", price: 75 },
-        { name: "Freelancer Kit", price: 88 },
-        { name: "Corporate CV Pack", price: 188 },
-        { name: "HR Toolkit Basic", price: 200 },
-        { name: "Certificate Bundle (10)", price: 125 }
-    ];
+      const services = [
+          { name: "Entry-Level CV", price: 25 },
+          { name: "Mid-Level CV", price: 50 },
+          { name: "Executive CV", price: 75 },
+          { name: "LinkedIn Optimization", price: 25 },
+          { name: "Infographic CV", price: 75 },
+          { name: "Cover Letter", price: 25 },
+          { name: "Job-Specific CV Customization", price: 20 },
+          { name: "SOP", price: 62 },
+          { name: "Motivation/Intent Letter", price: 38 },
+          { name: "Academic CV", price: 75 },
+          { name: "Recommendation Letter", price: 25 },
+          { name: "Achievement Certificate", price: 25 },
+          { name: "Participation Certificate", price: 25 },
+          { name: "QR Visiting Card", price: 20 },
+          { name: "Portfolio Booklet", price: 88 },
+          { name: "Freelancer Profile", price: 62 },
+          { name: "Tender CV", price: 50 },
+          { name: "CV Bundle (5+)", price: 188 },
+          { name: "CV Templates", price: 50 },
+          { name: "Company Profile PDF", price: 250 },
+          { name: "Letterhead + Stamp", price: 50 },
+          { name: "Proposal Template", price: 100 },
+          { name: "10 Certificates", price: 125 },
+          { name: "Onboarding Pack", price: 250 },
+          { name: "Email Signature (HTML)", price: 38 },
+          { name: "Policy Formatting", price: 250 },
+          { name: "Arabic-English Translation", price: 20 },
+          { name: "Editable PDF Forms", price: 25 },
+          { name: "Starter Job Seeker", price: 50 },
+          { name: "Career Boost Pack", price: 75 },
+          { name: "Freelancer Kit", price: 88 },
+          { name: "Corporate CV Pack", price: 188 },
+          { name: "HR Toolkit Basic", price: 200 },
+          { name: "Certificate Bundle (10)", price: 125 }
+      ];
 
-    services.forEach(service => {
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.name = 'services';
-        checkbox.value = `${service.name} - SAR ${service.price}`;
-        checkbox.dataset.price = service.price;
-        
-        const label = document.createElement('label');
-        label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(` ${service.name} (SAR ${service.price})`));
-        
-        serviceSelection.appendChild(label);
-        serviceSelection.appendChild(document.createElement('br'));
-    });
+      services.forEach(service => {
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.name = 'services[]';
+          checkbox.value = `${service.name} - SAR ${service.price}`;
+          checkbox.dataset.price = service.price;
+          
+          const label = document.createElement('label');
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(` ${service.name} (SAR ${service.price})`));
+          
+          serviceSelection.appendChild(label);
+      });
 
-    serviceSelection.addEventListener('change', () => {
-        let total = 0;
-        const checkedServices = serviceSelection.querySelectorAll('input[type="checkbox"]:checked');
-        checkedServices.forEach(checkbox => {
-            total += parseFloat(checkbox.dataset.price);
-        });
-        totalAmountDiv.textContent = `Total: SAR ${total.toFixed(2)}`;
-    });
+      serviceSelection.addEventListener('change', () => {
+          let total = 0;
+          const checkedServices = serviceSelection.querySelectorAll('input[type="checkbox"]:checked');
+          checkedServices.forEach(checkbox => {
+              total += parseFloat(checkbox.dataset.price);
+          });
+          totalAmountDiv.textContent = `Total: SAR ${total.toFixed(2)}`;
+      });
 
-    contactForm.addEventListener('submit', async function(event) {
-      event.preventDefault(); // Prevent default form submission
+      orderForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(orderForm);
+        formData.append('total', totalAmountDiv.textContent);
 
-      const formData = new FormData(contactForm);
-      const formUrl = contactForm.action;
+        try {
+          const response = await fetch(orderForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
 
-      try {
-        const response = await fetch(formUrl, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json' // Important for Formspree AJAX
-          }
-        });
-
-        if (response.ok) {
-          // Success
-          formMessages.innerHTML = `Thank you for your message! The KlerKing CV Services Team will contact you as soon as possible. <br>For urgent services, please contact us on <a href="https://wa.me/966571343223" target="_blank">WhatsApp</a>.`;
-          formMessages.style.color = 'green';
-          contactForm.reset(); // Clear the form
-          totalAmountDiv.textContent = 'Total: SAR 0';
-        } else {
-          // Error
-          const data = await response.json();
-          if (data.errors) {
-            formMessages.textContent = data.errors.map(error => error.message).join(', ');
+          if (response.ok) {
+            orderFormMessages.innerHTML = `Thank you for your order! The KlerKing team will contact you shortly. <br>For urgent service, contact us on <a href="https://wa.me/966571343223" target="_blank">WhatsApp</a>.`;
+            orderFormMessages.style.color = 'green';
+            orderForm.reset();
+            totalAmountDiv.textContent = 'Total: SAR 0';
           } else {
-            formMessages.textContent = 'Oops! There was a problem submitting your form.';
+            orderFormMessages.textContent = 'Oops! There was a problem submitting your order.';
+            orderFormMessages.style.color = 'red';
           }
-          formMessages.style.color = 'red';
+        } catch (error) {
+          orderFormMessages.textContent = 'Oops! There was a network error.';
+          orderFormMessages.style.color = 'red';
         }
-      } catch (error) {
-        formMessages.textContent = 'Oops! There was a network error. Please try again later.';
-        formMessages.style.color = 'red';
-      }
-    });
+      });
+    }
+
+    // --- Contact Form Logic ---
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      const contactFormMessages = document.getElementById('contactFormMessages');
+      contactForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            contactFormMessages.textContent = 'Thank you for your message! We will get back to you soon.';
+            contactFormMessages.style.color = 'green';
+            contactForm.reset();
+          } else {
+            contactFormMessages.textContent = 'Oops! There was a problem submitting your form.';
+            contactFormMessages.style.color = 'red';
+          }
+        } catch (error) {
+          contactFormMessages.textContent = 'Oops! There was a network error.';
+          contactFormMessages.style.color = 'red';
+        }
+      });
+    }
   </script>
 </body>
 </html>
