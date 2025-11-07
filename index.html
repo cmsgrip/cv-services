@@ -175,6 +175,16 @@
       <input type="text" name="name" placeholder="Your Name" required id="input-name" />
       <input type="email" name="email" placeholder="Your Email" required id="input-email" />
       <textarea name="message" placeholder="Tell us what you need..." rows="5" required id="input-message"></textarea>
+      
+      <fieldset id="service-selection">
+        <legend>Select Services</legend>
+        <!-- Services will be dynamically inserted here by JS -->
+      </fieldset>
+      
+      <div id="total-amount" style="text-align: right; font-weight: bold; margin: 10px 0;">
+        Total: SAR 0
+      </div>
+      
       <input type="hidden" name="_subject" value="New Message from KlerKing Website">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
@@ -321,6 +331,69 @@
     // Formspree AJAX submission
     const contactForm = document.getElementById('contactForm');
     const formMessages = document.getElementById('formMessages');
+    const serviceSelection = document.getElementById('service-selection');
+    const totalAmountDiv = document.getElementById('total-amount');
+
+    const services = [
+        { name: "Entry-Level CV", price: 25 },
+        { name: "Mid-Level CV", price: 50 },
+        { name: "Executive CV", price: 75 },
+        { name: "LinkedIn Optimization", price: 25 },
+        { name: "Infographic CV", price: 75 },
+        { name: "Cover Letter", price: 25 },
+        { name: "Job-Specific CV Customization", price: 20 },
+        { name: "SOP", price: 62 },
+        { name: "Motivation/Intent Letter", price: 38 },
+        { name: "Academic CV", price: 75 },
+        { name: "Recommendation Letter", price: 25 },
+        { name: "Achievement Certificate", price: 25 },
+        { name: "Participation Certificate", price: 25 },
+        { name: "QR Visiting Card", price: 20 },
+        { name: "Portfolio Booklet", price: 88 },
+        { name: "Freelancer Profile", price: 62 },
+        { name "Tender CV", price: 50 },
+        { name: "CV Bundle (5+)", price: 188 },
+        { name: "CV Templates", price: 50 },
+        { name: "Company Profile PDF", price: 250 },
+        { name: "Letterhead + Stamp", price: 50 },
+        { name: "Proposal Template", price: 100 },
+        { name: "10 Certificates", price: 125 },
+        { name: "Onboarding Pack", price: 250 },
+        { name: "Email Signature (HTML)", price: 38 },
+        { name: "Policy Formatting", price: 250 },
+        { name: "Arabic-English Translation", price: 20 },
+        { name: "Editable PDF Forms", price: 25 },
+        { name: "Starter Job Seeker", price: 50 },
+        { name: "Career Boost Pack", price: 75 },
+        { name: "Freelancer Kit", price: 88 },
+        { name: "Corporate CV Pack", price: 188 },
+        { name: "HR Toolkit Basic", price: 200 },
+        { name: "Certificate Bundle (10)", price: 125 }
+    ];
+
+    services.forEach(service => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.name = 'services';
+        checkbox.value = `${service.name} - SAR ${service.price}`;
+        checkbox.dataset.price = service.price;
+        
+        const label = document.createElement('label');
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(` ${service.name} (SAR ${service.price})`));
+        
+        serviceSelection.appendChild(label);
+        serviceSelection.appendChild(document.createElement('br'));
+    });
+
+    serviceSelection.addEventListener('change', () => {
+        let total = 0;
+        const checkedServices = serviceSelection.querySelectorAll('input[type="checkbox"]:checked');
+        checkedServices.forEach(checkbox => {
+            total += parseFloat(checkbox.dataset.price);
+        });
+        totalAmountDiv.textContent = `Total: SAR ${total.toFixed(2)}`;
+    });
 
     contactForm.addEventListener('submit', async function(event) {
       event.preventDefault(); // Prevent default form submission
@@ -339,9 +412,10 @@
 
         if (response.ok) {
           // Success
-          formMessages.textContent = 'Thank you for your message! We will get back to you soon.';
+          formMessages.innerHTML = `Thank you for your message! The KlerKing CV Services Team will contact you as soon as possible. <br>For urgent services, please contact us on <a href="https://wa.me/966571343223" target="_blank">WhatsApp</a>.`;
           formMessages.style.color = 'green';
           contactForm.reset(); // Clear the form
+          totalAmountDiv.textContent = 'Total: SAR 0';
         } else {
           // Error
           const data = await response.json();
