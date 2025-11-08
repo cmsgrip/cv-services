@@ -166,43 +166,53 @@ const englishTexts = {
       const totalAmountDiv = document.getElementById('total-amount');
 
       const services = [
-          { name: "Entry-Level CV", price: 25 },
-          { name: "Mid-Level CV", price: 50 },
-          { name: "Executive CV", price: 75 },
-          { name: "LinkedIn Optimization", price: 25 },
-          { name: "Infographic CV", price: 75 },
-          { name: "Cover Letter", price: 25 },
-          { name: "Job-Specific CV Customization", price: 20 },
-          { name: "SOP", price: 62 },
-          { name: "Motivation/Intent Letter", price: 38 },
-          { name: "Academic CV", price: 75 },
-          { name: "Recommendation Letter", price: 25 },
-          { name: "Achievement Certificate", price: 25 },
-          { name: "Participation Certificate", price: 25 },
-          { name: "QR Visiting Card", price: 20 },
-          { name: "Portfolio Booklet", price: 88 },
-          { name: "Freelancer Profile", price: 62 },
-          { name: "Tender CV", price: 50 },
-          { name: "CV Bundle (5+)", price: 188 },
-          { name: "CV Templates", price: 50 },
-          { name: "Company Profile PDF", price: 250 },
-          { name: "Letterhead + Stamp", price: 50 },
-          { name: "Proposal Template", price: 100 },
-          { name: "10 Certificates", price: 125 },
-          { name: "Onboarding Pack", price: 250 },
-          { name: "Email Signature (HTML)", price: 38 },
-          { name: "Policy Formatting", price: 250 },
-          { name: "Arabic-English Translation", price: 20 },
-          { name: "Editable PDF Forms", price: 25 },
-          { name: "Starter Job Seeker", price: 50 },
-          { name: "Career Boost Pack", price: 75 },
-          { name: "Freelancer Kit", price: 88 },
-          { name: "Corporate CV Pack", price: 188 },
-          { name: "HR Toolkit Basic", price: 200 },
-          { name: "Certificate Bundle (10)", price: 125 }
+          { name: "Entry-Level CV", price: 25, category: "CV & Resume Writing" },
+          { name: "Mid-Level CV", price: 50, category: "CV & Resume Writing" },
+          { name: "Executive CV", price: 75, category: "CV & Resume Writing" },
+          { name: "LinkedIn Optimization", price: 25, category: "CV & Resume Writing" },
+          { name: "Infographic CV", price: 75, category: "CV & Resume Writing" },
+          { name: "Cover Letter", price: 25, category: "CV & Resume Writing" },
+          { name: "Job-Specific CV Customization", price: 20, category: "CV & Resume Writing" },
+          { name: "SOP", price: 62, category: "Academic Documents" },
+          { name: "Motivation/Intent Letter", price: 38, category: "Academic Documents" },
+          { name: "Academic CV", price: 75, category: "Academic Documents" },
+          { name: "Recommendation Letter", price: 25, category: "Academic Documents" },
+          { name: "Achievement Certificate", price: 25, category: "Certificates & Branding" },
+          { name: "Participation Certificate", price: 25, category: "Certificates & Branding" },
+          { name: "QR Visiting Card", price: 20, category: "Certificates & Branding" },
+          { name: "Portfolio Booklet", price: 88, category: "Certificates & Branding" },
+          { name: "Freelancer Profile", price: 62, category: "Certificates & Branding" },
+          { name: "Tender CV", price: 50, category: "Company Services" },
+          { name: "CV Bundle (5+)", price: 188, category: "Company Services" },
+          { name: "CV Templates", price: 50, category: "Company Services" },
+          { name: "Company Profile PDF", price: 250, category: "Company Services" },
+          { name: "Letterhead + Stamp", price: 50, category: "Company Services" },
+          { name: "Proposal Template", price: 100, category: "Company Services" },
+          { name: "10 Certificates", price: 125, category: "Company Services" },
+          { name: "Onboarding Pack", price: 250, category: "Company Services" },
+          { name: "Email Signature (HTML)", price: 38, category: "Branding & Internal Docs" },
+          { name: "Policy Formatting", price: 250, category: "Branding & Internal Docs" },
+          { name: "Arabic-English Translation", price: 20, category: "Branding & Internal Docs" },
+          { name: "Editable PDF Forms", price: 25, category: "Branding & Internal Docs" },
+          { name: "Starter Job Seeker", price: 50, category: "Popular Bundles" },
+          { name: "Career Boost Pack", price: 75, category: "Popular Bundles" },
+          { name: "Freelancer Kit", price: 88, category: "Popular Bundles" },
+          { name: "Corporate CV Pack", price: 188, category: "Popular Bundles" },
+          { name: "HR Toolkit Basic", price: 200, category: "Popular Bundles" },
+          { name: "Certificate Bundle (10)", price: 125, category: "Popular Bundles" }
       ];
 
+      const categories = {};
       services.forEach(service => {
+          if (!categories[service.category]) {
+              categories[service.category] = document.createElement('div');
+              categories[service.category].classList.add('service-category');
+              const categoryTitle = document.createElement('h4');
+              categoryTitle.textContent = service.category;
+              categories[service.category].appendChild(categoryTitle);
+              serviceSelection.appendChild(categories[service.category]);
+          }
+
           const checkbox = document.createElement('input');
           checkbox.type = 'checkbox';
           checkbox.name = 'services[]';
@@ -213,7 +223,7 @@ const englishTexts = {
           label.appendChild(checkbox);
           label.appendChild(document.createTextNode(` ${service.name} (SAR ${service.price})`));
           
-          serviceSelection.appendChild(label);
+          categories[service.category].appendChild(label);
       });
 
       serviceSelection.addEventListener('change', () => {
