@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Muhamamd U. Portfolio - Custom Software, AI/ML, Technical Writing, SEO, Web Design, Chatbots, Data Analysis services." />
+  <meta name="keywords" content="Software Developer, QA Tester, AI, Machine Learning, Technical Writing, SEO, Web Design, Chatbots, Data Analysis" />
+  <meta name="author" content="Muhamamd U." />
+  <title>Klerking Portfolio | Muhamamd U.</title>
+  <style>
+    /* Reset & base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 20px;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+      color: #0049b7;
+      outline: none;
+    }
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 40px auto 60px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+    }
+    /* Section styles */
+    section {
+      margin-bottom: 50px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 40px;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    /* Titles */
+    h1 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-weight: 700;
+      font-size: 2.75rem;
+      letter-spacing: 1.5px;
+    }
+    h2 {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #1a73e8;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h3 {
+      font-weight: 600;
+      margin: 15px 0 10px 0;
+      color: #333;
+    }
+    /* Lists */
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    /* Why choose */
+    .why-choose {
+      background: #e8f0fe;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+    .why-choose strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #174ea6;
+    }
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 10px 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0;
+    }
+    nav ul li a {
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #1a73e8;
+      color: white;
+      border-color: #1669c1;
+      text-decoration: none;
+    }
+    /* Project Cards */
+    .project {
+      background: #f4f6fb;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin: 15px 0 20px 0;
+      box-shadow: 0 1px 6px rgb(0 0 0 / 0.05);
+      transition: box-shadow 0.3s ease;
+    }
+    .project:hover {
+      box-shadow: 0 4px 20px rgb(26 115 232 / 0.25);
+    }
+    .project a {
+      font-weight: 600;
+      color: #1a73e8;
+    }
+    /* Client Testimonials */
+    .testimonial {
+      background: #e0f2ff;
+      border-left: 5px solid #1a73e8;
+      padding: 12px 20px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #0b3954;
+      border-radius: 4px;
+    }
+    .testimonial strong {
+      font-style: normal;
+      color: #1a73e8;
+      display: block;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+    /* Icons */
+    .icon {
+      width: 28px;
+      height: 28px;
+      fill: #1a73e8;
+      flex-shrink: 0;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px 15px;
+      }
+      .container {
+        padding: 20px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 8px;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#custom-software" class="nav-link">Custom Software</a></li>
+      <li><a href="#ai-ml" class="nav-link">AI & ML</a></li>
+      <li><a href="#tech-writing" class="nav-link">Technical Writing</a></li>
+      <li><a href="#seo-content" class="nav-link">SEO & Content</a></li>
+      <li><a href="#web-design" class="nav-link">Web Design</a></li>
+      <li><a href="#chatbot" class="nav-link">Chatbot</a></li>
+      <li><a href="#data-analysis" class="nav-link">Data Analysis</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Portfolio & Services</h1>
+
+    <section id="custom-software">
+      <h2>
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M20 6v12H4V6h16m0-2H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"/></svg>
+        Custom Software Development
+      </h2>
+      <p><strong>Overview:</strong><br />
+      I build robust, scalable, and efficient custom software solutions tailored to your unique business needs. From web applications to APIs and automation scripts, I deliver end-to-end projects that streamline your workflows and boost productivity.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Full-stack web app development (React, Vue, Node.js, Python, PHP)</li>
+        <li>Backend API design and integration</li>
+        <li>Workflow automation and data processing</li>
+        <li>Cloud deployment and maintenance support</li>
+      </ul>
+      <h3>Project Examples</h3>
+      <div class="project">
+        <a href="https://github.com/username/quote-app" target="_blank" rel="noopener noreferrer">Quote Request Web App</a> — Developed a Dockerized React + Node.js app for managing client quote requests with PDF email generation.
+      </div>
+      <div class="project">
+        <a href="https://klerking.com/crm" target="_blank" rel="noopener noreferrer">Klerking CRM System</a> — Custom CRM platform integrating client management, invoicing, and analytics dashboards.
+      </div>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Clean, modular, and maintainable code</li>
+          <li>Agile development with regular progress updates</li>
+          <li>Focus on security, performance, and scalability</li>
+        </ul>
+      </div>
+      <div class="testimonial">
+        “Muhamamd’s custom software solutions transformed our business processes and saved us countless hours of manual work.”<br /><strong>— Client A, CEO</strong>
+      </div>
+    </section>
+
+    <section id="ai-ml">
+      <h2>
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1.5 14.5h-3v-3h3v3zm0-4h-3V7h3v5.5z"/></svg>
+        AI & Machine Learning Solutions
+      </h2>
+      <p><strong>Overview:</strong><br />
+      Leverage the power of AI to transform your business. I develop intelligent systems including chatbots, recommendation engines, and data-driven models that enhance decision-making and user engagement.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Custom AI model design and training</li>
+        <li>Chatbot development and conversational flows</li>
+        <li>Predictive analytics and data modeling</li>
+        <li>Natural Language Processing (NLP) applications</li>
+      </ul>
+      <h3>Project Examples</h3>
+      <div class="project">
+        <a href="https://github.com/username/chatbot-nlp" target="_blank" rel="noopener noreferrer">Customer Support Chatbot</a> — Built a NLP-powered chatbot integrated with Facebook Messenger and WhatsApp for automated FAQs and support.
+      </div>
+      <div class="project">
+        <a href="https://klerking.com/risk-forecast" target="_blank" rel="noopener noreferrer">Construction Risk Forecasting Dashboard</a> — Developed a predictive analytics dashboard using machine learning for construction project risk management.
+      </div>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Custom-tailored AI solutions for your needs</li>
+          <li>Data-driven insights to optimize performance</li>
+          <li>Seamless integration with your existing systems</li>
+        </ul>
+      </div>
+      <div class="testimonial">
+        “The AI models Muhamamd delivered improved our forecasting accuracy by over 30%, helping us avoid costly delays.”<br /><strong>— Client B, Data Analyst</strong>
+      </div>
+    </section>
+
+    <section id="tech-writing">
+      <h2>
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M3 19h18v2H3zm2-7h14v2H5zm0-4h14v2H5z"/></svg>
+        Technical Writing & Documentation
+      </h2>
+      <p><strong>Overview:</strong><br />
+      Clear, concise, and user-friendly technical documentation is crucial. I create manuals, API docs, and training materials that help your users and team understand complex systems effortlessly.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>User guides and manuals</li>
+        <li>API and developer documentation</li>
+        <li>Standard Operating Procedures (SOPs)</li>
+        <li>Technical blog articles and whitepapers</li>
+      </ul>
+      <h3>Project Examples</h3>
+      <div class="project">
+        <a href="https://klerking.com/docs/erpnext-module" target="_blank" rel="noopener noreferrer">ERPNext Module Documentation</a> — Developed comprehensive user and admin guides for a custom ERPNext module.
+      </div>
+      <div class="project">
+        <a href="https://klerking.com/blog/ai-in-construction" target="_blank" rel="noopener noreferrer">Technical Blog on AI in Construction</a> — Wrote detailed articles explaining AI applications in construction risk management.
+      </div>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Structured, easy-to-follow documentation</li>
+          <li>Optimized for both technical and non-technical audiences</li>
+          <li>Delivered in multiple formats (PDF, HTML, Markdown)</li>
+        </ul>
+      </div>
+      <div class="testimonial">
+        “Thanks to Muhamamd’s documentation, our team onboarding time decreased by 40%.”<br /><strong>— Client C, Project Manager</strong>
+      </div>
+    </section>
+
+    <section id="seo-content">
+      <h2>
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+        SEO & Content Strategy
+      </h2>
+      <p><strong>Overview:</strong><br />
+      Increase your online visibility with targeted SEO strategies and high-quality content that drives traffic and converts visitors into customers.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Keyword research and SEO audits</li>
+        <li>Content creation: blogs, articles, landing pages</li>
+        <li>On-page and off-page SEO optimization</li>
+        <li>Performance monitoring and analytics</li>
+      </ul>
+      <h3>Project Examples</h3>
+      <div class="project">
+        <a href="https://klerking.com/blog/seo-tips" target="_blank" rel="noopener noreferrer">SEO Tips Blog Series</a> — Produced a series of SEO-focused articles that boosted organic traffic by 25%.
+      </div>
+      <div class="project">
+        <a href="https://klerking.com/seo-audit-report" target="_blank" rel="noopener noreferrer">SEO Audit for E-commerce Site</a> — Delivered detailed SEO audit with actionable recommendations for an online retailer.
+      </div>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Data-driven SEO strategies</li>
+          <li>Engaging and keyword-rich content</li>
+          <li>Improved search engine rankings and visibility</li>
+        </ul>
+      </div>
+      <div class="testimonial">
+        “Muhamamd’s SEO work doubled our website traffic in six months.”<br /><strong>— Client D, Marketing Director</strong>
+      </div>
+    </section>
+
+    <section id="web-design">
+      <h2>
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M12 2l7 7-7 7-7-7 7-7z"/></svg>
+        Modern Web Design & UI/UX
+      </h2>
+      <p><strong>Overview:</strong><br />
+      Design stunning, user-friendly websites with clean layouts, vibrant colors, and intuitive navigation that captivate and convert your visitors.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Responsive web design</li>
+        <li>UI/UX design with modern trends</li>
+        <li>Performance optimization</li>
+        <li>Accessibility compliance (WCAG)</li>
+      </ul>
+      <h3>Project Examples</h3>
+      <div class="project">
+        <a href="https://klerking.com/quote-request" target="_blank" rel="noopener noreferrer">Quote Request Page Redesign</a> — Redesigned a quote request form with improved usability and responsive design.
+      </div>
+      <div class="project">
+        <a href="https://klerking.com/airbnb-clone" target="_blank" rel="noopener noreferrer">Airbnb Clone</a> — Full-stack multi-language rental platform with RTL support and clean UI.
+      </div>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Beautiful, modern designs that engage users</li>
+          <li>Mobile-first and performance-optimized</li>
+          <li>Focus on usability and accessibility</li>
+        </ul>
+      </div>
+      <div class="testimonial">
+        “The new design boosted our user sign-ups by 40% within weeks.”<br /><strong>— Client E, Product Owner</strong>
+      </div>
+    </section>
+
+    <section id="chatbot">
+      <h2>
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M12 7a2 2 0 00-2 2c0 .55.22 1.05.59 1.41A2 2 0 0012 13a2 2 0 002-2c0-.55-.22-1.05-.59-1.41A2 2 0 0012 7zm-5 9v-2h10v2H7z"/></svg>
+        Chatbot Development & Automation
+      </h2>
+      <p><strong>Overview:</strong><br />
+      Create intelligent chatbots that automate customer support, FAQs, and lead generation across multiple platforms like Facebook Messenger and WhatsApp.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Chatbot design and conversational UX</li>
+        <li>Integration with Facebook Messenger, WhatsApp, and websites</li>
+        <li>Automation of FAQs and support workflows</li>
+        <li>Analytics and user behavior tracking</li>
+      </ul>
+      <h3>Project Examples</h3>
+      <div class="project">
+        <a href="https://klerking.com/chatbot-support" target="_blank" rel="noopener noreferrer">Multi-Platform Support Chatbot</a> — Designed and deployed a chatbot handling over 5000 monthly queries.
+      </div>
+      <div class="project">
+        <a href="https://github.com/username/chatbot-automation" target="_blank" rel="noopener noreferrer">FAQ Automation Bot</a> — Built a bot automating support FAQ responses reducing support load by 30%.
+      </div>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Natural, engaging conversations</li>
+          <li>Customizable to your business needs</li>
+          <li>Easy to maintain and update</li>
+        </ul>
+      </div>
+      <div class="testimonial">
+        “Our chatbot saved us hours of customer support every week — highly recommend Muhamamd’s work!”<br /><strong>— Client F, Customer Service Lead</strong>
+      </div>
+    </section>
+
+    <section id="data-analysis">
+      <h2>
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 14h2v2h-2v-2zm0-8h2v6h-2V8z"/></svg>
+        Data Analysis & Visualization
+      </h2>
+      <p><strong>Overview:</strong><br />
+      Turn raw data into actionable insights with comprehensive analysis and visualization. I provide reports, dashboards, and data storytelling to help you make informed decisions quickly.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Data cleaning and preprocessing</li>
+        <li>Statistical analysis and hypothesis testing</li>
+        <li>Interactive dashboards with Tableau and Power BI</li>
+        <li>Custom visualizations using D3.js or Python</li>
+      </ul>
+      <h3>Project Examples</h3>
+      <div class="project">
+        <a href="https://klerking.com/dashboards/construction-risk" target="_blank" rel="noopener noreferrer">Construction Risk Dashboard</a> — Developed a dashboard to track and predict construction risks with ML models.
+      </div>
+      <div class="project">
+        <a href="https://github.com/username/data-visualization" target="_blank" rel="noopener noreferrer">Interactive Data Visualizations</a> — Created interactive visualizations for complex datasets using D3.js.
+      </div>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Insightful and clear data storytelling</li>
+          <li>Custom dashboards tailored to your KPIs</li>
+          <li>Improved decision-making efficiency</li>
+        </ul>
+      </div>
+      <div class="testimonial">
+        “Muhamamd’s data dashboards helped us cut analysis time by half.”<br /><strong>— Client G, Operations Manager</strong>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Muhamamd. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

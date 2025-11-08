@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klerking Portfolio | Services</title>
+  <style>
+    /* Reset & base */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 20px;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 40px auto 60px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+    }
+    /* Section styles */
+    section {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 30px;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    /* Titles */
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #1a73e8;
+    }
+    /* Lists */
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    /* Why choose */
+    .why-choose {
+      background: #e8f0fe;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+    .why-choose strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #174ea6;
+    }
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 10px 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0;
+    }
+    nav ul li a {
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      border: 1px solid transparent;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #1a73e8;
+      color: white;
+      border-color: #1669c1;
+      text-decoration: none;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px 15px;
+      }
+      .container {
+        padding: 20px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#custom-software" class="nav-link">Custom Software</a></li>
+      <li><a href="#ai-ml" class="nav-link">AI & ML</a></li>
+      <li><a href="#tech-writing" class="nav-link">Technical Writing</a></li>
+      <li><a href="#seo-content" class="nav-link">SEO & Content</a></li>
+      <li><a href="#web-design" class="nav-link">Web Design</a></li>
+      <li><a href="#chatbot" class="nav-link">Chatbot</a></li>
+      <li><a href="#data-analysis" class="nav-link">Data Analysis</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Portfolio & Services</h1>
+
+    <section id="custom-software">
+      <h2>Custom Software Development</h2>
+      <p><strong>Overview:</strong><br />
+      I build robust, scalable, and efficient custom software solutions tailored to your unique business needs. From web applications to APIs and automation scripts, I deliver end-to-end projects that streamline your workflows and boost productivity.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Full-stack web app development (React, Vue, Node.js, Python, PHP)</li>
+        <li>Backend API design and integration</li>
+        <li>Workflow automation and data processing</li>
+        <li>Cloud deployment and maintenance support</li>
+      </ul>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Clean, modular, and maintainable code</li>
+          <li>Agile development with regular progress updates</li>
+          <li>Focus on security, performance, and scalability</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ai-ml">
+      <h2>AI & Machine Learning Solutions</h2>
+      <p><strong>Overview:</strong><br />
+      Leverage the power of AI to transform your business. I develop intelligent systems including chatbots, recommendation engines, and data-driven models that enhance decision-making and user engagement.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Custom AI model design and training</li>
+        <li>Chatbot development and conversational flows</li>
+        <li>Predictive analytics and data modeling</li>
+        <li>Natural Language Processing (NLP) applications</li>
+      </ul>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Tailored AI solutions aligned with your goals</li>
+          <li>Transparent, explainable AI techniques</li>
+          <li>Seamless integration with existing platforms</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="tech-writing">
+      <h2>Technical Writing & Documentation</h2>
+      <p><strong>Overview:</strong><br />
+      Clear and concise technical documentation is key to project success. I create user manuals, API docs, tutorials, and white papers that help your team and customers understand your products effortlessly.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>API documentation and developer guides</li>
+        <li>User manuals and onboarding materials</li>
+        <li>Training content and e-learning modules</li>
+        <li>White papers and technical reports</li>
+      </ul>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Precision and clarity in complex topics</li>
+          <li>Structured, easy-to-navigate documents</li>
+          <li>Fast turnaround and revisions based on feedback</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="seo-content">
+      <h2>SEO & Content Marketing Strategy</h2>
+      <p><strong>Overview:</strong><br />
+      Boost your online presence with data-driven SEO and content marketing strategies. I create SEO-optimized blog posts, keyword plans, and outreach content designed to increase traffic and conversions.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>SEO audit and keyword research</li>
+        <li>Blog and article writing with SEO best practices</li>
+        <li>Content calendars and strategy planning</li>
+        <li>Outreach emails and guest post content</li>
+      </ul>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Content crafted for both users and search engines</li>
+          <li>Focus on measurable results and growth</li>
+          <li>Continuous optimization and reporting</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="web-design">
+      <h2>Web Design (UI/UX Concepts & Prototypes)</h2>
+      <p><strong>Overview:</strong><br />
+      Create stunning, user-friendly websites that engage and convert visitors. I deliver wireframes, UI concepts, and prototypes that blend aesthetics with usability to deliver a seamless user experience.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Wireframing and interactive prototypes</li>
+        <li>UI style guides and branding integration</li>
+        <li>Front-end code snippets (HTML/CSS/JS)</li>
+        <li>User experience analysis and improvements</li>
+      </ul>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Modern, clean, and responsive designs</li>
+          <li>User-centered approach for maximum engagement</li>
+          <li>Collaborative process with clear milestones</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="chatbot">
+      <h2>Chatbot Development & Automation</h2>
+      <p><strong>Overview:</strong><br />
+      Automate customer interactions and business workflows with intelligent chatbots. I develop chatbots that integrate with messaging platforms and automate repetitive tasks to improve efficiency and user satisfaction.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Chatbot design and conversational UX</li>
+        <li>Integration with Facebook Messenger, WhatsApp, and websites</li>
+        <li>Automation of FAQs and support workflows</li>
+        <li>Analytics and user behavior tracking</li>
+      </ul>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Natural, engaging conversations</li>
+          <li>Customizable to your business needs</li>
+          <li>Easy to maintain and update</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="data-analysis">
+      <h2>Data Analysis & Visualization</h2>
+      <p><strong>Overview:</strong><br />
+      Turn raw data into actionable insights with comprehensive analysis and visualization. I provide reports, dashboards, and data storytelling to help you make informed decisions quickly.</p>
+      <p><strong>Services include:</strong></p>
+      <ul>
+        <li>Data cleaning and preprocessing</li>
+        <li>Statistical analysis and hypothesis testing</li>
+        <li>Interactive dashboards with tools like Tableau and Power BI</li>
+        <li>Custom data visualizations using D3.js or Python</li>
+      </ul>
+      <div class="why-choose">
+        <strong>Why choose this service?</strong>
+        <ul>
+          <li>Clear insights with actionable recommendations</li>
+          <li>Custom-tailored to your industry and goals</li>
+          <li>Fast turnaround and data security</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Highlight active nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
