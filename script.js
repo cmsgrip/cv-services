@@ -261,6 +261,27 @@ const englishTexts = {
             orderFormMessages.style.color = 'red';
         }
       });
+
+      const proceedToPaymentButton = document.getElementById('proceedToPayment');
+      if (proceedToPaymentButton) {
+        proceedToPaymentButton.addEventListener('click', () => {
+          const totalAmountText = totalAmountDiv.textContent;
+          const totalAmount = parseFloat(totalAmountText.replace('Total: SAR ', ''));
+
+          if (totalAmount > 0) {
+            // For a real integration, you would use a PayPal API or a more robust client-side SDK.
+            // This is a simplified example for a "Buy Now" button.
+            const paypalEmail = 'your-paypal-business-email@example.com'; // Replace with your PayPal business email
+            const itemName = 'KlerKing Services Order';
+            const currencyCode = 'SAR'; // Saudi Riyal
+
+            const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${paypalEmail}&item_name=${itemName}&amount=${totalAmount.toFixed(2)}&currency_code=${currencyCode}`;
+            window.open(paypalUrl, '_blank');
+          } else {
+            alert('Please select services to proceed with payment.');
+          }
+        });
+      }
     }
 
     // --- Contact Form Logic ---
