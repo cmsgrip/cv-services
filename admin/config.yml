@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: backup-before-phase-1-redesign # Branch to update
+  
+media_folder: "assets/uploads" # Folder where uploaded files will be stored
+public_folder: "/assets/uploads" # The same folder, but relative to the website root
+
+collections:
+  - name: "services"
+    label: "Services"
+    folder: "_data/services" # Where the service data files will be stored
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Service Name", name: "name", widget: "string"}
+      - {label: "Price (SAR)", name: "price", widget: "number", value_type: "float"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+
+  - name: "portfolio"
+    label: "Portfolio Items"
+    folder: "_data/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Link", name: "link", widget: "string", required: false}
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "_data/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Quote", name: "quote", widget: "text"}
+      - {label: "Author", name: "author", widget: "string"}
